@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MID Solutions | House Sgalelana</title>
+    <!--Font awesome CDN-->
+    <script src="https://kit.fontawesome.com/eca2d6ebce.js" crossorigin="anonymous"></script>
+    <!-- Stylesheet -->
+    
+    <link rel="icon" type="image/png" href="/MID-favicon.png">
+    <link rel="stylesheet" href="/css/portfolio css/styleHouseSgalelana.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <a href="/index.html" class="logo"><img src="/MID Solutions HD Logo UPDATED Black.svg" alt="MID Logo in black"></a>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="/pages/about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/projects.html" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/contact.html" class="nav-link">Contact</a>
+                </li>
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <a href="https://wa.me/27670561227?text=I%20would%20like%20to%20inquire%20about%20a%20custom%20project" class="contact-link"><i class="fa-brands fa-whatsapp"></i></a>
+                    </li>
+                    <li class="contact-item">
+                        <a href="mailto:info@midsolutionz.com" class="contact-link"><i class="fa-regular fa-envelope"></i></a>
+                    </li>
+                    <li class="contact-item">
+                        <a href="" class="contact-link"><i class="fa-brands fa-linkedin"></i></a>
+                    </li>
+                    <li class="contact-item">
+                        <a href="https://www.instagram.com/midsolutions_za/" class="contact-link" target="_blank" rel="noopener no-referrer"><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li class="contact-item">
+                        <a href="https://www.tiktok.com/@midsolutions?_t=8eEy0IghHa2&_r=1" class="contact-link" target="_blank" rel="noopener no-referrer"><i class="fa-brands fa-tiktok"></i></a>
+                    </li>
+                </ul>
+            </ul>
+        </nav>
+    </header>
+    <!-- Header Ends -->
+    <section class="hero">
+        <div class="project-image">
+        </div>
+        <div class="write-up">
+            <h1 class="project-name">House Sgalelana</h1>
+            <p class="project-location">Cinsta Bay, East London, Eastern Cape</p>
+        </div>
+        <a href="/pages/portfolios/House_Machete.html" class="project-link">Next Project</a>
+    </section>
+    <!-- Hero Ends -->
+    <footer class="footer">
+        <div class="contact-burger">
+            <ul class="contact">
+                <li class="info-item">
+                    <a href="https://wa.me/27670561227?text=I%20would%20like%20to%20inquire%20about%20a%20custom%20project" class="info-link"><i class="fa-brands fa-whatsapp"></i></a>
+                </li>
+                <li class="info-item">
+                    <a href="mailto:info@midsolutionz.com" class="info-link"><i class="fa-regular fa-envelope"></i></a>
+                </li>
+                <li class="info-item">
+                    <a href="https://www.linkedin.com/in/mamqoco-innovative-design-solutions-66aa0b248/" class="info-link" target="_blank" rel="noopener no-referrer"><i class="fa-brands fa-linkedin"></i></a>
+                </li>
+                <li class="info-item">
+                    <a href="https://www.instagram.com/midsolutions_za/" class="info-link" target="_blank" rel="noopener no-referrer"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li class="info-item">
+                    <a href="https://www.tiktok.com/@midsolutions?_t=8eEy0IghHa2&_r=1" class="info-link" target="_blank" rel="noopener no-referrer"><i class="fa-brands fa-tiktok"></i></a>
+                </li>
+            </ul>
+        </div>
+        <p>© 2023 MID Solutions. All rights reserved.</p>
+    </footer>
+    <!-- Footer Ends -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // select element function
+        const selectElement = function(element) {
+        return document.querySelector(element);
+        };
+
+        const menuToggler = selectElement('.menu-toggle');
+        let body = selectElement('body');
+
+        menuToggler.addEventListener('click', function () {
+            body.classList.toggle('open');
+            
+            if($("body").hasClass("open")){
+                $(".logo img").attr("src","/MID Solutions HD Logo UPDATED Black.svg");
+            } else {
+                $(".logo img").attr("src","/MID Solutions HD Logo UPDATED Black.svg");
+            }
+        });
+    </script>
+    <script src="velocity.min.js"></script>
+</body>
+</html>

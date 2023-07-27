@@ -1,0 +1,545 @@
+@font-face {
+    font-family: Dubai-light;
+    /* font-weight: light; */
+    src: url("/fonts/DubaiW23-Light.woff2") format("woff2"),
+         url("/fonts/DubaiW23-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: Dubai-normal;
+    /* font-weight: normal; */
+    src: url("/fonts/DubaiW23-Regular.woff2") format("woff2"),
+         url("/fonts/DubaiW23-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: Dubai-bold;
+    /* font-weight: normal; */
+    src: url("/fonts/DubaiW23-Medium.woff2") format("woff2"),
+         url("/fonts/DubaiW23-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: Dubai-bolder;
+    /* font-weight: normal; */
+    src: url("/fonts/DubaiW23-Bold.woff2") format("woff2"),
+         url("/fonts/DubaiW23-Bold.woff") format("woff");
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: Dubai-normal;
+    font-size: 10px;
+    color: black;
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+img{
+    width: 100%;
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Navigation bar */
+nav{
+    height: 7.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle{
+    color: #000;
+    font-size: 3rem;
+    position: absolute;
+    top: 30%;
+    right: 2rem;
+    cursor: pointer;
+    z-index: 1999;        
+}
+
+.fa-times{
+    display: none;
+    color: black;
+}
+
+.logo{
+    position: absolute;
+    width: 10rem;
+    left: 1rem;
+    top: .5rem;
+    z-index: 1999;
+}
+
+.open .fa-times{
+    display: block;
+}
+
+.open .fa-bars{
+    display: none;
+}
+
+.open .nav-list{
+    transform: translateY(0);
+}
+
+.open .nav-list::after{
+    opacity: 0;
+    animation: fadeUp .6s forwards;
+    animation-delay: 1.4s;
+}
+
+.open .nav-item:nth-child(1){
+    opacity: 0;
+    animation: fadeUp .6s forwards;
+    animation-delay: .6s;
+}
+
+.open .nav-item:nth-child(2){
+    opacity: 0;
+    animation: fadeUp .6s forwards;
+    animation-delay: .8s;
+}
+
+.open .nav-item:nth-child(3){
+    opacity: 0;
+    animation: fadeUp .6s forwards;
+    animation-delay: 1s;
+}
+
+.open .contact-list{
+    opacity: 0;
+    animation: fadeUp .6s forwards;
+    animation-delay: 1.2s;
+}
+
+/*header*/
+
+header{
+    width:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.nav-list{
+    background-color: #fff;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    z-index: 1500;
+    padding: 0 30px 20px;
+    transform: translateY(-100%);
+    transition: transform .5s ease-in-out;
+}
+
+.nav-list::after{
+    color: black;
+    content: '© 2023 MID Solutions. All rights reserved';
+    position: fixed;
+    font-size: 1rem;
+    top: 90%;
+    width: 80%;
+    padding: 10px 30px;
+    text-align: center;
+    opacity: 0;
+}
+
+.nav-item{
+    padding: 10px 30px; 
+}
+
+.nav-link{
+    display: block;
+    color: black;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(134,134,134,1) 90%, rgba(210,210,210,1) 100%);
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 4rem;
+    font-weight: 600;
+    width: min-content;
+    transition: transform .3s ease-in-out;
+}
+
+.nav-link:hover{
+    color: rgba(0,0,0,0);
+    transform: translateX(2rem);
+}
+
+.contact-list{
+    padding: 10px 30px;
+    list-style: none;
+    display: flex;
+    position: fixed;
+    justify-content: center; 
+    top: 80%;
+    width: 80%;
+    text-align: center; 
+}
+
+.contact-item{
+    padding: 10px 20px;
+}
+
+.contact-link{
+    display: block;
+    color:black;
+    font-size: 2rem;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(134,134,134,1) 90%, rgba(210,210,210,1) 100%);
+    -webkit-background-clip: text;
+    transition: transform .3s ease-in-out;
+}
+
+.contact-link:hover{
+    color: rgba(0,0,0,0);
+    transform: translateY(-1rem);
+}
+
+/* Hero */
+.hero{
+    width: 100%;
+    height: 95vh;
+    /* margin-top: 3rem; */
+}
+
+.project-image{
+    width: 100%;
+    height: 80vh;
+    background: url("/images/House_Mokoena.jpg") center no-repeat;
+    /* background-position: 50% 50%; */
+    background-size: cover;
+}
+
+.project-name{
+    font-family: Dubai-bold;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+.write-up{
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+.project-location{
+    font-family: Dubai-light;
+    font-size: 1.7rem;
+}
+
+.project-link{
+    color: #000;
+    border-bottom: 1px solid #000;
+    /* margin-top: 4rem;  */
+    font-size: 1.4rem;
+    position: relative;
+    left: 81%;
+    top: 4%;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    width: 100%;
+    padding: 3rem 0 1rem 0;
+}
+
+.contact{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.info-item{
+    padding: 10px 20px;
+}
+
+.info-link{
+    display: block;
+    color: black;
+    font-size: 2rem;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(134,134,134,1) 90%, rgba(210,210,210,1) 100%);
+    -webkit-background-clip: text;
+    transition: transform .3s ease-in-out;
+}
+
+.info-link:hover{
+    color: rgba(0,0,0,0);
+    transform: translateY(-1rem);
+}
+
+/* Animations */
+@keyframes fadeUp {
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp2 {
+    0%{
+        transform: translateY(200%);
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeDown {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown2 {
+    0%{
+        transform: translateY(-18%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scale {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(2);
+    }
+}
+
+@keyframes subline {
+    0%{
+        top: 22.8%;
+        width: 30%;
+    }
+    50%{
+        top: 22.8%;
+        width: 1000px;
+        opacity: 1;
+    }
+    100%{
+        top: 48%;
+        opacity: 1;
+    }
+}
+
+@keyframes slideright {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideleft {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .nav-list{
+        background-color: initial;
+        display: flex;
+        flex-direction: row;
+        transform: translateY(-100%);
+        transition: transform .5s ease-in-out;
+    }
+
+    .nav-list,.nav-item{
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav-list::after{
+        width: initial;
+        left: 0;
+    }
+
+    .nav-item{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        border-right: 1px solid rgba(0, 0, 0, 0.7);
+    }
+
+    .nav-link{
+        width: initial;
+        opacity: 0;
+        transition: font-size .3s ease-in-out;
+    }
+
+    .nav-link:hover{
+        font-size: 6rem ;
+    }
+
+    header{
+        position: fixed;
+    }
+
+    .contact-list{
+        width: initial;
+        top: 87%;
+        right: -1%;
+        padding: 10px 15px;
+    }
+
+    .open .nav-list{
+        transform: translateY(0);
+    }
+    
+    .open .nav-list::after{
+        opacity: 0;
+        animation: fadeUp .6s forwards;
+        animation-delay: 1.9s;
+    } 
+    
+    .open .nav-item:nth-child(1){
+        opacity: 0;
+        animation: fadeDown .6s forwards;
+        animation-delay: .2s;
+    }
+    
+    .open .nav-item:nth-child(2){
+        opacity: 0;
+        animation: fadeDown .6s forwards;
+        animation-delay: .6s;
+    }
+    
+    .open .nav-item:nth-child(3){
+        opacity: 0;
+        animation: fadeDown .6s forwards;
+        animation-delay: 1s;
+    }
+
+    .open .nav-link{
+        animation: fadeUp2 .6s forwards;
+        animation-delay: 1.5s;
+    }
+    
+    .open .contact-list{
+        opacity: 0;
+        animation: fadeUp .6s forwards;
+        animation-delay: 1.9s;
+    }
+
+    .hero{
+        margin-top: 13rem;
+        height: 80vh;
+        padding: 0 15rem;
+    }
+    
+    .project-image{
+        background-position: 0% 50%;
+        height: 70vh;
+    }
+    
+    .write-up{
+        padding: initial;
+    }
+    .project-name{
+        font-size: 3rem;
+        letter-spacing: .2rem;
+    }
+    .project-location{
+        font-size: 2rem;
+    }
+
+    .project-link{
+        position: absolute;
+        top: 50%;
+        left: initial;
+        right: 3%;
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(134,134,134,1) 90%, rgba(210,210,210,1) 100%);
+        -webkit-background-clip: text;
+        transition: transform .3s ease-in-out;
+    }
+
+    .project-link:hover{
+        color: rgba(0,0,0,0);
+        transform: translateX(1rem);
+    }
+    
+    .footer{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 3rem;
+        width: 100%;
+        padding: 3rem 0 1rem 0;
+    }
+    
+    .contact{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .info-item{
+        padding: 10px 20px;
+    }
+    
+    .info-link{
+        display: block;
+        color: black;
+        font-size: 2rem;
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(134,134,134,1) 90%, rgba(210,210,210,1) 100%);
+        -webkit-background-clip: text;
+        transition: transform .3s ease-in-out;
+    }
+    
+    .info-link:hover{
+        color: rgba(0,0,0,0);
+        transform: translateY(-1rem);
+    }
+    
+    .footer p{
+        padding-left: 2rem;
+        font-weight: normal;
+    }
+}
